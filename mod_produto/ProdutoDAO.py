@@ -20,7 +20,6 @@ def post_produto(p: Produto):
     return {
         "msg": "post executado",
         "nome": p.nome,
-        "descricao": p.descricao,
         "foto": p.foto,
         "valor_unit": p.valor_unit,
     }, 200
@@ -30,6 +29,7 @@ def post_produto(p: Produto):
 def put_produto(id: int, p: Produto):
     return {
         "msg": "put executado",
+        "id": id,
         "nome": p.nome,
         "descricao": p.descricao,
         "foto": p.foto,

@@ -1,9 +1,10 @@
 from fastapi import APIRouter
+from mod_cliente.Cliente import Cliente
 
 router = APIRouter()
-
-
 # Criar os endpoints de Cliente: GET, POST, PUT, DELETE
+
+
 @router.get("/cliente/", tags=["Cliente"])
 def get_cliente():
     return {"msg": "get todos executado"}, 200
@@ -15,13 +16,29 @@ def get_cliente(id: int):
 
 
 @router.post("/cliente/", tags=["Cliente"])
-def post_cliente():
-    return {"msg": "post executado"}, 200
+def post_cliente(c: Cliente):
+    return {
+        "msg": "post executado",
+        "nome": c.nome,
+        "cpf": c.cpf,
+        "telefone": c.telefone,
+        "marca_fiado": c.marca_fiado,
+        "dia_fiado": c.dia_fiado,
+        "senha": c.senha,
+    }, 200
 
 
 @router.put("/cliente/{id}", tags=["Cliente"])
-def put_cliente(id: int):
-    return {"msg": "put executado"}, 201
+def put_cliente(id: int, c: Cliente):
+    return {
+        "msg": "put executado",
+        "id": id,
+        "nome": c.nome,
+        "cpf": c.cpf,
+        "telefone": c.telefone,
+        "marca_fiado": c.marca_fiado,
+        "dia_fiado": c.dia_fiado,
+    }, 201
 
 
 @router.delete("/cliente/{id}", tags=["Cliente"])

@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 
 
-class FuncionarioModel(BaseModel):
+class Funcionario(BaseModel):
     id_funcionario: int = None
     nome: str
     matricula: str

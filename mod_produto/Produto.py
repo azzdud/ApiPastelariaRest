@@ -1,9 +1,9 @@
 from pydantic import BaseModel
 
 
-class ProdutoModel(BaseModel):
+class Produto(BaseModel):
     id_produto: int = None
     nome: str
     descricao: str = None
     foto: str
-    valor_unit: str
+    valor_unit: int
