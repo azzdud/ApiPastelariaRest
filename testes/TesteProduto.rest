@@ -2,28 +2,29 @@
 GET http://localhost:8000/produto/ HTTP/1.1
 
 ### Verbo GET – listar um
-GET http://localhost:8000/produto/10 HTTP/1.1
+GET http://localhost:8000/produto/1 HTTP/1.1
 
 ### Verbo POST – adicionar
 POST http://127.0.0.1:8000/produto/ HTTP/1.1
 content-type: application/json
 
 {
-    "nome" : "Pastel de carne",
-    "descricao" : "Massa de pastel e carne",
+    "nome" : "Pastel de Vento",
+    "descricao" : "Luís Eduardo Bernardino Luz",
     "foto" : "foto",
-    "valor_unit" : 12
+    "valor_unit" : 0
 }
 
 ### Verbo PUT – atualiza
-PUT http://127.0.0.1:8000/produto/2 HTTP/1.1
+PUT http://127.0.0.1:8000/produto/1 HTTP/1.1
 content-type: application/json
 
 {
     "nome" : "Pastel de carne e queijo",
+    "descricao" : "Luís Eduardo Bernardino Luz EDITADO",
     "foto" : "foto",
     "valor_unit" : 14
 }
 
 ### Verbo DELETE - excluir
-DELETE http://127.0.0.1:8000/produto/3 HTTP/1.1
+DELETE http://127.0.0.1:8000/produto/1 HTTP/1.1
