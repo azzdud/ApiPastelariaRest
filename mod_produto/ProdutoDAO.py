@@ -5,7 +5,13 @@ from mod_produto.Produto import Produto
 import db
 from mod_produto.ProdutoModel import ProdutoDB
 
-router = APIRouter()
+from fastapi import Depends
+import security
+
+# dependências de forma global
+router = APIRouter(
+    dependencies=[Depends(security.verify_token), Depends(security.verify_key)]
+)
 # Criar as rotas/endpoints: GET, POST, PUT, DELETE
 
 
